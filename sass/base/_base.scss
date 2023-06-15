@@ -1,0 +1,45 @@
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: auto;
+  font-size: 1.6rem;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+}
+
+body.active {
+  overflow: hidden;
+}
+
+html.active {
+  overflow: hidden;
+}
+
+h1 {
+  color: $color-light-xl;
+  @include font($height: 5.7rem, $size: 4.4rem);
+}
+
+h2 {
+  color: $color-dark-l;
+  @include font($height: 4.5rem, $size: 3.5rem);
+
+  @media (max-width: 767px) {
+      @include font($height: 3.25rem, $size: 2.5rem);
+  }
+}
+
+h3 {
+  @include font($height: 2.3rem, $size: 2rem);
+}
+
+h4 {
+  @include font($height: 1.7rem, $size: 1.5rem);
+}
+
+p {
+  @extend %font-add;
+  @include font($height: 2.4rem, $size: 1.5rem);
+}

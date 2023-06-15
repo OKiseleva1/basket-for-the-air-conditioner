@@ -1,0 +1,125 @@
+.button {
+  padding: 15px 45px;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: 0.06em;
+  background: $color-primary;
+  color: $color-dark-3xl;
+  cursor: pointer;
+  @extend %transition;
+
+  @media (max-width: 1279px) {
+      margin-left: 126px;
+  }
+
+  @media (max-width: 767px) {
+      margin-left: 46px;
+  }
+
+  &:hover {
+      background: $color-primary-light;
+  }
+}
+
+.button-light {
+  padding: 15px 45px;
+  border-radius: 50px;
+  border: 2px $color-primary solid;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: 0.06em;
+  background: $color-light-small;
+  color: $color-dark-3xl;
+  cursor: pointer;
+  @extend %transition;
+
+  &:hover {
+      background: $color-primary-light;
+      border: 2px $color-primary-light solid;
+  }
+}
+
+.button-arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 50px;
+  border: 2px $color-primary solid;
+  background-color: $color-light-small;
+  cursor: pointer;
+  @extend %transition;
+
+  &:hover {
+      background: $color-primary-light;
+      border: 2px $color-primary-light solid;
+  }
+}
+
+.arrow {
+  display: block;
+  margin: auto;
+}
+
+.card-button {
+  padding: 10px 15px;
+  border-radius: 9px;
+  border: none;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-style: normal;
+  background: $color-primary;
+  color: $color-dark-l;
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  column-gap: 15px;
+  @extend %transition;
+
+  &:hover {
+      background: $color-primary-light;
+  }
+}
+
+
+.button-back {
+  width: 52px;
+  height: 52px;
+  border-radius: 50px;
+  color: $color-dark-small;
+  border: 2px solid $color-dark-small;
+  background-color: $color-light-xl;
+  cursor: pointer;
+  @extend %transition;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.button-right {
+  width: 52px;
+  height: 52px;
+  border-radius: 50px;
+  color: $color-dark-3xl;
+  border: 2px solid $color-primary;
+  background-color: $color-light-xl;
+  cursor: pointer;
+  @extend %transition;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  text-align: center;
+
+  &:hover {
+      background: $color-primary-light;
+      border: 2px $color-primary-light solid;
+  }
+}
