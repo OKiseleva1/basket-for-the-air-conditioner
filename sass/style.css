@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .button-right, .button-back, .card-button, .button-arrow, .button-light, .button, .navigation__link-pets, .navigation__link {
   transition: all 0.3s ease-out;
 }
@@ -593,31 +594,56 @@ header {
   }
 }
 
-.slider {
+.slider__wrapper {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 90px;
-}
-@media (max-width: 1279px) {
-  .slider {
-    column-gap: 40px;
-  }
+  width: 990px;
+  height: 381px;
+  overflow: hidden;
 }
 
-@media (max-width: 1279px) {
-  .woody {
-    display: none;
+.slider__card {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -990px;
+  width: 990px;
+  height: 381px;
+}
+
+.item {
+  display: flex;
+  width: 990px;
+  gap: 90px;
+}
+
+@keyframes move-left {
+  from {
+    left: -990px;
+  }
+  to {
+    left: -1980px;
   }
 }
-@media (max-width: 767px) {
-  .jennifer {
-    display: none;
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move-right {
+  from {
+    left: -990px;
   }
-  .button-arrow {
-    display: none;
+  to {
+    left: 0px;
   }
 }
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
 .products__content {
   margin: 0;
 }
@@ -641,7 +667,7 @@ header {
 }
 
 .slider__content {
-  padding-bottom: 25px;
+  padding-bottom: 24px;
 }
 
 .slider__content:hover {
@@ -743,6 +769,131 @@ header {
     padding-left: 20px;
     height: 269px;
   }
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(41, 41, 41, 0.6);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.popup._open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 188px 190px;
+}
+
+.popup-content {
+  position: relative;
+  background: #fafafa;
+  color: #000000;
+  max-width: 900px;
+  height: 500px;
+  display: flex;
+  column-gap: 30px;
+  border-radius: 9px;
+  transform: scale(0);
+  transition: all 0.5s ease-in-out;
+}
+
+.popup._open .popup-content {
+  transform: scale(1);
+}
+
+.popup-closer {
+  position: absolute;
+  text-decoration: none;
+  width: 52px;
+  height: 52px;
+  top: -52px;
+  right: -40px;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  background: url(../assets/icons/closer.png) no-repeat center;
+  transition: all 0.5s ease-in-out;
+}
+
+.popup-closer:hover {
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
+}
+
+.popup-img {
+  height: 100%;
+  border-radius: 9px;
+}
+
+.popup-description {
+  padding-top: 50px;
+  padding-right: 20px;
+}
+
+.popup-title {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+.popup-subtitle {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  margin-top: 10px;
+}
+
+.popup-text {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.popup-item::before {
+  color: #F1CDB3;
+  content: "•";
+  padding-right: 10px;
+}
+
+.popup-item {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  margin-top: 11px;
+}
+
+.popup-item span {
+  font-family: "Georgia";
+  font-style: bolt;
+  font-weight: 900;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
 }
 
 /*# sourceMappingURL=style.css.map */
