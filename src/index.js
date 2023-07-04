@@ -165,37 +165,37 @@ CAROUSEL.addEventListener("animationend", (animationEvent) => {
 });
 
 // Меню бургер
-// const burgerMenu = document.querySelector(".header-burger");
-// const menuBody = document.querySelector(".header-nav");
-// const menuItems = document.querySelectorAll(".header-item");
+const burgerMenu = document.querySelector(".header-burger");
+const menuBody = document.querySelector(".header__navigation");
+const menuItems = document.querySelectorAll(".navigation li");
 
-// if (burgerMenu) {
-//     burgerMenu.addEventListener("click", function () {
-//         document.body.classList.toggle("_lock");
-//         burgerMenu.classList.toggle("_active");
-//         menuBody.classList.toggle("_active");
-//     });
-// }
+if (burgerMenu) {
+    burgerMenu.addEventListener("click", function () {
+        document.body.classList.toggle("_lock");
+        burgerMenu.classList.toggle("_active");
+        menuBody.classList.toggle("_active");
+    });
+}
 
-// // закрытие при клике на body
-// menuBody.addEventListener("click", event => {
-//     event._isClickWithInMenu = true;
-// });
-// burgerMenu.addEventListener("click", event => {
-//     event._isClickWithInMenu = true;
-// });
-// document.body.addEventListener("click", event => {
-//     if (event._isClickWithInMenu) return;
-//     burgerMenu.classList.remove("_active");
-//     menuBody.classList.remove("_active");
-//     document.body.classList.remove("_lock");
-// });
+// закрытие при клике на body
+menuBody.addEventListener("click", event => {
+    event._isClickWithInMenu = true;
+});
+burgerMenu.addEventListener("click", event => {
+    event._isClickWithInMenu = true;
+});
+document.body.addEventListener("click", event => {
+    if (event._isClickWithInMenu) return;
+    burgerMenu.classList.remove("_active");
+    menuBody.classList.remove("_active");
+    document.body.classList.remove("_lock");
+});
 
-// // закрытие при клике на ссылку
-// menuItems.forEach(el => {
-//     el.addEventListener("click", () => {
-//         burgerMenu.classList.remove("_active");
-//         menuBody.classList.remove("_active");
-//         document.body.classList.remove("_lock");
-//     });
-// });
+// закрытие при клике на ссылку
+menuItems.forEach(el => {
+    el.addEventListener("click", () => {
+        burgerMenu.classList.remove("_active");
+        menuBody.classList.remove("_active");
+        document.body.classList.remove("_lock");
+    });
+});

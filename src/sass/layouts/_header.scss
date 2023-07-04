@@ -2,10 +2,6 @@ header {
   padding-top: 30px;
 }
 
-.header-pets {
-  padding-bottom: 15px;
-}
-
 .header__wrapper {
   display: flex;
   align-items: center;
@@ -32,4 +28,9 @@ header {
 
 .header__navigation {
   padding-bottom: 16px;
+}
+
+.header__navigation._active {
+  right: 0px;
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.5);
 }

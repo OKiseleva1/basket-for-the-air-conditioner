@@ -1,0 +1,39 @@
+.header-burger {
+  display: none;
+    position: relative;
+    width: 30px;
+    height: 20px;
+
+    @include media-tablet {
+  z-index: 5;
+  display: block;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+}
+
+
+.header-burger span {
+  position: absolute;
+  background-color: #f1cdb3;
+  width: 100%;
+  height: 2px;
+  top: 9px;
+}
+.header-burger:before,
+.header-burger:after {
+  content: '';
+  background-color: #f1cdb3;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+}
+.header-burger:before {
+  top: 0px;
+}
+.header-burger:after {
+  bottom: 0px;
+}
+.header-burger._active{
+  transform: rotate(-90deg);
+}

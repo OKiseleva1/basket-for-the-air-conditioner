@@ -53,39 +53,6 @@ li {
   }
 }
 
-
-.navigation__link-pets {
-  @extend %font-add;
-  font-size: 1.5rem;
-  font-weight: 400;
-  line-height: 2.4rem;
-  color: $color-dark-l;
-  text-decoration: none;
-  cursor: pointer;
-  @extend %transition;
-
-  &:after {
-      content: '';
-      display: block;
-      height: 3px;
-      background: $color-primary;
-      width: 0%;
-      @extend %transition-navigation;
-  }
-
-  &:hover {
-      color: $color-dark-3xl;
-
-      &:after {
-          content: '';
-          display: block;
-          height: 3px;
-          background: $color-primary;
-          width: 100%;
-      }
-  }
-}
-
 .navigation__link-selected {
   color: $color-light-small;
 
@@ -98,22 +65,12 @@ li {
   }
 }
 
-.navigation__pets-selected {
-  color: $color-dark-3xl;
-
-  &:after {
-      content: '';
-      display: block;
-      height: 3px;
-      background: $color-primary;
-      width: 58px;
-  }
-}
-
 .header__navigation {
   @include media-tablet {
       display: none;
   }
+
+  
 }
 
 .header__navigation.active {
@@ -122,22 +79,15 @@ li {
   top: 0;
 }
 
+
+
 .header__navigation.active>.navigation {
   flex-direction: column;
 }
 
-@media (max-width: 767px) {
-  .header__navigation {
-      position: fixed;
-      right: -100%;
-      top: 0;
-      display: flex;
-      flex-direction: column;
-      width: 320px;
-      height: 100%;
-      text-align: center;
-      background-color: #292929;
-      z-index: 8;
-      transition: 0.5s;
+.header__navigation {
+  @include media-tablet {
+      display: none;
   }
 }
+
