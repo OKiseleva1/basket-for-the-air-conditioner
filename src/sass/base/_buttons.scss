@@ -13,15 +13,12 @@
   cursor: pointer;
   @extend %transition;
 
-  @media (max-width: 1279px) {
-      margin-left: 126px;
+  @include media-laptop {
+      margin: 0 auto;
+      display: block;
   }
 
-  @media (max-width: 767px) {
-      margin-left: 46px;
-  }
-
-  &:hover {
+ &:hover {
       background: $color-primary-light;
   }
 }
@@ -86,8 +83,6 @@
       background: $color-primary-light;
   }
 }
-
-
 .button-back {
   width: 52px;
   height: 52px;

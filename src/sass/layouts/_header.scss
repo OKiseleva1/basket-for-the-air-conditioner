@@ -26,11 +26,3 @@ header {
   color: $color-light-xl;
 }
 
-.header__navigation {
-  padding-bottom: 16px;
-}
-
-.header__navigation._active {
-  right: 0px;
-  box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.5);
-}

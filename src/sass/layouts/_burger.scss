@@ -1,39 +1,43 @@
+
+%burger__line {
+  background-color: $color-primary;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  }
+
 .header-burger {
-  display: none;
-    position: relative;
-    width: 30px;
-    height: 20px;
+  display: none;   
 
     @include media-tablet {
   z-index: 5;
   display: block;
-  cursor: pointer;
   transition: all 0.5s ease-in-out;
+  position: relative;
+    width: 30px;
+    height: 20px;
 }
 }
 
-
-.header-burger span {
-  position: absolute;
-  background-color: #f1cdb3;
-  width: 100%;
-  height: 2px;
+.burger__line {
+  @extend %burger__line;
   top: 9px;
 }
+
 .header-burger:before,
 .header-burger:after {
   content: '';
-  background-color: #f1cdb3;
-  position: absolute;
-  width: 100%;
-  height: 2px;
-}
+  @extend %burger__line;  
+  }
+
 .header-burger:before {
   top: 0px;
 }
+
 .header-burger:after {
   bottom: 0px;
 }
-.header-burger._active{
+
+.header-burger._active {
   transform: rotate(-90deg);
 }

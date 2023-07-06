@@ -3,9 +3,9 @@
   padding-bottom: 100px;
   background: $color-light-l;
 
-  @media (max-width: 767px) {
+  @include media-tablet {
       padding-top: 42px;
-  }
+  }  
 }
 
 .products__wrapper {
@@ -31,7 +31,7 @@
   justify-content: space-between;
   column-gap: 53px;
 
-  @media (max-width: 1279px) {
+  @include media-laptop {
       column-gap: 12px;
   }
 }
@@ -41,46 +41,104 @@
   width: 990px;
   height: 381px;
   overflow: hidden;
+
+  @include media-laptop{
+    width: 580px;
+  }
+
+  @include media-tablet {
+    width: 270px;
+  }
     }
 
 .slider__card{ 
   display: flex;
+  column-gap: 90px;
   align-items: center;
   position: relative;
-  left: -990px;
+  left: -1080px;
   width: 990px;
-  height: 381px; 
+  height: 381px;
+  
+  @include media-laptop {
+    column-gap: 40px;
+    left: -620px;
+  }
   }
 
   .item{
     display: flex;
     width: 990px;
     gap: 90px;
-      }
 
-  @keyframes move-left{
-    from {
-      left: -990px;
+    @include media-laptop{
+      gap: 40px;
     }
-      to {
-        left: -1980px;
       }
-  }
 
-  .transition-left{
+      .item-active:last-child{
+        @include media-laptop {
+          display: none;
+        }
+      }
+
+      .item-left:last-child{
+        @include media-laptop {
+          display: none;
+        }
+      }
+
+      .item-right:last-child{
+        @include media-laptop {
+          display: none;
+        }
+      }
+
+      
+  
+    @keyframes move-left{
+      from {
+        left: -1080px;          
+        }
+      to {
+          left: -2160px;            
+          }
+        }
+  
+  @keyframes move-right{
+      from {
+        left:-1080px;
+        }
+        to {
+          left: 0px;
+        }
+    }
+
+    @include media-laptop{
+      @keyframes move-left{
+        from {
+          left: -620px;
+        }
+        to{
+          left: -1240px;
+        }
+      }
+
+      @keyframes move-right{
+        from {
+          left:-620px;
+          }
+          to {
+            left: 0px;
+          }
+      }  
+    }
+  
+  .transition-left {
     animation-name: move-left;
     animation-duration: 2s;
     animation-fill-mode: forwards;
-  }
-
-  @keyframes move-right{
-    from {
-      left:-990px;
-    }
-      to {
-        left: 0px;
-      }
-  }
+  }  
 
   .transition-right{
     animation-name: move-right;
