@@ -835,6 +835,16 @@ header {
   align-items: center;
   padding: 188px 190px;
 }
+@media (max-width: 1200px) {
+  .popup-body {
+    padding: 263px 69px;
+  }
+}
+@media (max-width: 767px) {
+  .popup-body {
+    padding: 221px 40px;
+  }
+}
 
 .popup-content {
   position: relative;
@@ -847,6 +857,21 @@ header {
   border-radius: 9px;
   transform: scale(0);
   transition: all 0.5s ease-in-out;
+}
+@media (max-width: 1200px) {
+  .popup-content {
+    max-width: 630px;
+    height: 350px;
+    display: flex;
+    column-gap: 11px;
+  }
+}
+@media (max-width: 767px) {
+  .popup-content {
+    max-width: 240px;
+    height: 100%;
+    column-gap: 0px;
+  }
 }
 
 .popup._open .popup-content {
@@ -861,6 +886,12 @@ header {
 .popup-description {
   padding-top: 50px;
   padding-right: 20px;
+}
+@media (max-width: 1200px) {
+  .popup-description {
+    padding-top: 10px;
+    padding-right: 8px;
+  }
 }
 
 .popup-title {
@@ -892,6 +923,13 @@ header {
   margin-top: 40px;
   margin-bottom: 40px;
 }
+@media (max-width: 1200px) {
+  .popup-text {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
 
 .popup-item::before {
   color: #F1CDB3;
@@ -907,6 +945,11 @@ header {
   line-height: 110%;
   letter-spacing: 0.06em;
   margin-top: 11px;
+}
+@media (max-width: 1200px) {
+  .popup-item {
+    margin-top: 5px;
+  }
 }
 
 .popup-item span {
@@ -929,12 +972,37 @@ header {
   border-radius: 100px;
   transition: all 0.5s ease-in-out;
 }
+@media (max-width: 767px) {
+  .popup-closer {
+    right: -30px;
+  }
+}
 
 .popup-closer:hover {
   border: 2px solid #fddcc4;
   background-color: #fddcc4;
 }
 
+@media (max-width: 767px) {
+  .popup-img {
+    height: 0px;
+    display: none;
+  }
+  .popup-description {
+    padding: 10px;
+  }
+  .popup-title {
+    text-align: center;
+  }
+  .popup-subtitle {
+    text-align: center;
+  }
+  .popup-text {
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+}
 .header-burger:before,
 .header-burger:after, .burger__line {
   background-color: #F1CDB3;
