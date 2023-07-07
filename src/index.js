@@ -136,7 +136,6 @@ CAROUSEL.addEventListener("animationend", (animationEvent) => {
         ITEM_ACTIVE.innerHTML=ITEM_LEFT.innerHTML;
     }
 
-
         createMainArr();
 
         changedItem.innerHTML = "";
