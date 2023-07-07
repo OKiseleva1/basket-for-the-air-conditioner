@@ -39,7 +39,7 @@
 .slider__wrapper{
   display: flex;
   width: 990px;
-  height: 381px;
+  // height: 381px;
   overflow: hidden;
 
   @include media-laptop{
@@ -53,26 +53,42 @@
 
 .slider__card{ 
   display: flex;
+  flex-wrap: nowrap;
   column-gap: 90px;
   align-items: center;
   position: relative;
   left: -1080px;
   width: 990px;
-  height: 381px;
+  height: 435px;
   
   @include media-laptop {
     column-gap: 40px;
     left: -620px;
   }
+
+  @include media-tablet{
+    left: -270px;
+    column-gap: 0px;
+  }
   }
 
   .item{
-    display: flex;
-    width: 990px;
-    gap: 90px;
+   height: 435px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 90px;
+    align-items: center;
 
     @include media-laptop{
-      gap: 40px;
+      grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 40px;      
+    }
+
+    @include media-tablet{
+      grid-template-columns: 1fr;
+        grid-area: slider;
+        order: -1;
+        grid-column-gap: 0px;
     }
       }
 
@@ -92,9 +108,7 @@
         @include media-laptop {
           display: none;
         }
-      }
-
-      
+      }      
   
     @keyframes move-left{
       from {
@@ -134,6 +148,25 @@
       }  
     }
   
+    @include media-tablet{
+      @keyframes move-left{
+        from {
+          left: -270px;
+        }
+        to{
+          left: -540px;
+        }
+      }
+
+      @keyframes move-right{
+        from {
+          left:-270px;
+          }
+          to {
+            left: 0px;
+          }
+      }  
+    }
   .transition-left {
     animation-name: move-left;
     animation-duration: 2s;
@@ -170,6 +203,7 @@
 
 .slider__content {
   padding-bottom: 24px;
+  height: 435px;
 }
 
 .slider__content:hover {
