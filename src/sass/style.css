@@ -543,7 +543,6 @@ header {
 .slider__wrapper {
   display: flex;
   width: 990px;
-  height: 381px;
   overflow: hidden;
 }
 @media (max-width: 1200px) {
@@ -559,12 +558,13 @@ header {
 
 .slider__card {
   display: flex;
+  flex-wrap: nowrap;
   column-gap: 90px;
   align-items: center;
   position: relative;
   left: -1080px;
   width: 990px;
-  height: 381px;
+  height: 435px;
 }
 @media (max-width: 1200px) {
   .slider__card {
@@ -572,15 +572,32 @@ header {
     left: -620px;
   }
 }
+@media (max-width: 767px) {
+  .slider__card {
+    left: -270px;
+    column-gap: 0px;
+  }
+}
 
 .item {
-  display: flex;
-  width: 990px;
-  gap: 90px;
+  height: 435px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 90px;
+  align-items: center;
 }
 @media (max-width: 1200px) {
   .item {
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .item {
+    grid-template-columns: 1fr;
+    grid-area: slider;
+    order: -1;
+    grid-column-gap: 0px;
   }
 }
 
@@ -636,6 +653,24 @@ header {
     }
   }
 }
+@media (max-width: 767px) {
+  @keyframes move-left {
+    from {
+      left: -270px;
+    }
+    to {
+      left: -540px;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: -270px;
+    }
+    to {
+      left: 0px;
+    }
+  }
+}
 .transition-left {
   animation-name: move-left;
   animation-duration: 2s;
@@ -672,6 +707,7 @@ header {
 
 .slider__content {
   padding-bottom: 24px;
+  height: 435px;
 }
 
 .slider__content:hover {
