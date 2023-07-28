@@ -198,3 +198,18 @@ menuItems.forEach(el => {
         document.body.classList.remove("_lock");
     });
 });
+
+
+//форма обратной связи
+
+let formBg = document.querySelector('#client-form');
+let formBody = document.querySelector('#body-form');
+let openFormButton = document.querySelector('#button-form');
+let closeFormButton = document.querySelector('#closer'); 
+
+
+    openFormButton.addEventListener('click', (e) => { //вешаем обработчик событий на клик
+        e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+        formBg.classList.add('_open'); // Добавляем класс '_open' для фона
+        formBody.classList.add('_open'); // И для самого окна
+    });
