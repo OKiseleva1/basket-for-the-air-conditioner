@@ -203,21 +203,53 @@
                     </ul>
                 </div>
             </div>
-        </div>
-
-
-        <div id="client-form" class="popup">
-            <div id="body-form" class="popup-body">
-                <div id="content-form" class="popup-content">
-                    <button id="closer" class="popup-closer">&#x2715</button>
-                    <h1>hjhkjhjhkhk</h1>
-                    
-                </div>
-            </div>
-
-
-
+        </div>        
     </div>
+    <div id="client-form" class="popup">
+        <form id="body-form" class="popup-body">
+            <div id="content-form" class="form-content">                
+                <h2 class="form__title">Заявка</h2>
+                <div class="form__item">
+                    <label for="formName">Имя*</label>
+                    <input id="formName" class="form__input" name="name" type="text">
+                </div>
+                <div class="form__item">
+                    <label for="formEmail">E-mail*</label>
+                    <input id="formEmail" class="form__input" name="email" type="text">
+                </div>
+                <div class="form__item">
+                    <label for="formPhone">Телефон*</label>
+                    <input id="formPhone" class="form__input" name="phone" type="text">
+                </div>
+                <div class="form__item">
+                    <label for="formMessage">Сообщение</label>
+                    <textarea id="formMessage" class="form__input" name="message"></textarea>
+                </div>
+                <div class="form__item">
+                    <div class="form__label">Выберите RAL</div>
+                    <select class="select" name="color">
+                        <option value="1001">RAL1001</option>
+                        <option value="3016">RAL3016</option>
+                        <option value="9001">RAL9001</option>
+                        <option value="7022">RAL7022</option>
+                        <option value="7044">RAL7044</option>
+                        <option value="2010">RAL2010</option>
+                        <option value="7047">RAL7047</option>
+                        <option value="7004">RAL7004</option>
+                        <option value="7012">RAL7012</option>
+                        <option value="1017">RAL1017</option>
+                        <option value="2000">RAL2000</option>                       
+                    </select>   
+                </div>
+                <div class="form__item">
+                    <div class="checkbox">
+                        <input id="formAgreement" type="checkbox" name="agreement" class="checkbox__input">
+                        <label class="checkbox__label" for="formAgreement">Нажимая кнопку я даю свое согласие на обработку персональных данных и соглашаюсь с условиями политики конфиденциальности</label>
+                    </div>                    
+                </div>
+                <button class="button" type="submit">Отправить</button>
+            </div>            
+        </form>
     <script src="./src/index.js"></script>
 </body>  
 </html>

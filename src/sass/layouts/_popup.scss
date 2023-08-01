@@ -13,12 +13,21 @@
   opacity: 1;
   visibility: visible;
 }
+
+//для формы обратной связи
+.popup._active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
 .popup-body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 188px 190px;
+  margin: 0 auto;
+  padding-top: 10%;
 
   @include media-laptop{
     padding: 263px 69px;
@@ -56,6 +65,11 @@
 }
 
 .popup._open .popup-content {
+  transform: scale(1);
+}
+
+//для формы обратной связи
+.popup._active .form-content {
   transform: scale(1);
 }
 

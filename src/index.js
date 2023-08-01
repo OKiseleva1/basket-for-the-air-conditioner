@@ -12,6 +12,36 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log(e);
     }
 
+ //форма обратной связи
+
+ let formBg = document.querySelector('#client-form');
+ let formBody = document.querySelector('#body-form');
+ let openFormButton = document.querySelector('#button-form');
+ let closeFormButton = document.querySelector('#closer'); 
+ 
+ 
+     openFormButton.addEventListener('click', (e) => { //вешаем обработчик событий на клик
+         e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+         formBg.classList.add('_active'); // Добавляем класс '_active' для фона
+         formBody.classList.add('_active'); // И для самого окна
+     });
+ 
+     closeFormButton.addEventListener('click', function () { // Вешаем обработчик на крестик
+         formBg.classList.remove('_active'); // Убираем активный класс с фона
+         formBody.classList.remove('_active'); // И с окна
+        
+     });
+
+     formBody.addEventListener('click', (e) => { // Вешаем обработчик на весь документ
+        if(e.target == formBody) { // Если цель клика - фон, то:
+            formBg.classList.remove('_active'); // Убираем активный класс с фона
+            formBody.classList.remove('_active'); // И с окна
+        }
+    });
+ 
+
+
+
     const BTN_LEFT = document.querySelector('#button-arrow-left');
 const BTN_RIGHT = document.querySelector('#button-arrow-right');
 const CAROUSEL = document.querySelector('#slider__card');
@@ -161,6 +191,7 @@ CAROUSEL.addEventListener("animationend", (animationEvent) => {
         closePopupWithButton();
     })
 
+   
 });
 
 // Меню бургер
@@ -199,17 +230,13 @@ menuItems.forEach(el => {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function(){
+    const form= document.querySelector('#body-form');
+    form.addEventListener('submit', formSend);
+    
+    async function formSend(e){
+        e.preventDefault();
+    }
+})
 
-//форма обратной связи
-
-let formBg = document.querySelector('#client-form');
-let formBody = document.querySelector('#body-form');
-let openFormButton = document.querySelector('#button-form');
-let closeFormButton = document.querySelector('#closer'); 
-
-
-    openFormButton.addEventListener('click', (e) => { //вешаем обработчик событий на клик
-        e.preventDefault(); // Предотвращаем дефолтное поведение браузера
-        formBg.classList.add('_open'); // Добавляем класс '_open' для фона
-        formBody.classList.add('_open'); // И для самого окна
-    });
+    
