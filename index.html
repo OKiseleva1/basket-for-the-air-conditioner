@@ -44,7 +44,7 @@
                       Наши изделия совместимы с фасадами любого типа. Размещение кондиционеров в специальные корзины поможет сделать фасад здания аккуратным, гармоничным и современным!
                       
                       </p>
-                    <button class="button"><a href="#friends" class="button-link">Заказать</a></button>
+                    <button id="button-form" class="button"><a href="#friends" class="button-link">Заказать</a></button>
                 </div>
                 <div class="home__image">
                     <img src="./src/assets/img/image9.png" alt="Basket">
@@ -137,7 +137,7 @@
                     <button class="button-arrow arrow" id="button-arrow-right"><img src="./src/assets/icons/Arrow-right.png"
                             alt="arrow"></button>
                 </div>
-                <button id="button-form" class="button">Связаться с нами</button>
+                <button id="button-form-second" class="button">Связаться с нами</button>
             </div>
         </div>
     </section>
@@ -189,11 +189,7 @@
                     <h2 class="popup-title">Jennifer</h2>
                     <h3 class="popup-subtitle">Dog - Labrador</h3>
                     <p class="popup-text">
-                        Jennifer is a sweet 2 months old Labrador that is patiently waiting to find a new forever home.
-                        This girl really enjoys
-                        being able to go outside to run and play, but won't hesitate to play up a storm in the house if
-                        she has all of her
-                        favorite toys.
+                        Корзина легко собирается, а её конструкция позволяет по необходимости производить технический осмотр наружного блока.
                     </p>
                     <ul class="popup-list">
                         <li class="popup-item"><span>Age:</span> 2 months</li>
@@ -206,20 +202,20 @@
         </div>        
     </div>
     <div id="client-form" class="popup">
-        <form id="body-form" class="popup-body">
+        <form id="body-form" class="popup-body form__body">
             <div id="content-form" class="form-content">                
                 <h2 class="form__title">Заявка</h2>
                 <div class="form__item">
                     <label for="formName">Имя*</label>
-                    <input id="formName" class="form__input" name="name" type="text">
+                    <input id="formName" class="form__input _req" name="name" type="text">
                 </div>
                 <div class="form__item">
                     <label for="formEmail">E-mail*</label>
-                    <input id="formEmail" class="form__input" name="email" type="text">
+                    <input id="formEmail" class="form__input _req _email" name="email" type="email">
                 </div>
                 <div class="form__item">
                     <label for="formPhone">Телефон*</label>
-                    <input id="formPhone" class="form__input" name="phone" type="text">
+                    <input id="formPhone" class="form__input _req _phone" name="phone" type="tel">
                 </div>
                 <div class="form__item">
                     <label for="formMessage">Сообщение</label>
@@ -243,7 +239,7 @@
                 </div>
                 <div class="form__item">
                     <div class="checkbox">
-                        <input id="formAgreement" type="checkbox" name="agreement" class="checkbox__input">
+                        <input id="formAgreement" type="checkbox" name="agreement" class="checkbox__input _req">
                         <label class="checkbox__label" for="formAgreement">Нажимая кнопку я даю свое согласие на обработку персональных данных и соглашаюсь с условиями политики конфиденциальности</label>
                     </div>                    
                 </div>

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.checkbox__label::after, .form__input, .form-content, .button-right, .button-back, .card-button, .button-arrow, .button-light, .button, .navigation__link {
+.checkbox__label::after, .form__input, .form-content, .form__body::after, .button-right, .button-back, .card-button, .button-arrow, .button-light, .button, .navigation__link {
   transition: all 0.3s ease-out;
 }
 
@@ -889,8 +889,9 @@ header {
 }
 
 .popup-img {
-  height: 100%;
+  height: 80%;
   border-radius: 9px;
+  margin: auto;
 }
 
 .popup-description {
@@ -1060,6 +1061,27 @@ form * {
   outline: none;
 }
 
+.form__body {
+  position: relative;
+}
+
+.form__body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: white url(/src/assets/icons/load.gif) center/50px no-repeat;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.form__body._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
 .form-content {
   position: relative;
   flex-direction: column;
@@ -1114,6 +1136,10 @@ form * {
   box-shadow: 0 0 15px #4C4C4C;
 }
 
+.form__input._error {
+  box-shadow: 0 0 15px red;
+}
+
 textarea.form__input {
   min-height: 120px;
   resize: vertical;
@@ -1133,6 +1159,10 @@ textarea.form__input {
 .checkbox {
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.checkbox._error .checkbox__label::before {
+  box-shadow: 0 0 15px red;
 }
 
 .checkbox__label {

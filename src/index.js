@@ -1,3 +1,5 @@
+"use strict"
+
 async function loadBascets() {
     return (await fetch("./src/bascets.json")).json();
 }
@@ -17,6 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
  let formBg = document.querySelector('#client-form');
  let formBody = document.querySelector('#body-form');
  let openFormButton = document.querySelector('#button-form');
+ let openFormButtonSecond = document.querySelector('#button-form-second');
  let closeFormButton = document.querySelector('#closer'); 
  
  
@@ -37,6 +40,14 @@ document.addEventListener("DOMContentLoaded", async () => {
             formBg.classList.remove('_active'); // Убираем активный класс с фона
             formBody.classList.remove('_active'); // И с окна
         }
+    });
+
+
+    //вторая форма
+    openFormButtonSecond.addEventListener('click', (e) => { //вешаем обработчик событий на клик
+        e.preventDefault(); // Предотвращаем дефолтное поведение браузера
+        formBg.classList.add('_active'); // Добавляем класс '_active' для фона
+        formBody.classList.add('_active'); // И для самого окна
     });
  
 
@@ -230,13 +241,68 @@ menuItems.forEach(el => {
     });
 });
 
+
+//валидация формы
 document.addEventListener('DOMContentLoaded', function(){
-    const form= document.querySelector('#body-form');
+    const form= document.getElementById('body-form');
     form.addEventListener('submit', formSend);
-    
+
     async function formSend(e){
         e.preventDefault();
+        let error = formValidate(form);
+
+        let formData=new FormData(form);
+       
+        if(error === 0){
+            form.classList.add('_sending');
+            let response= await fetch ('sendmail.php', {
+                method: 'POST',
+                body: formData
+            });
+            if(response.ok){
+                let result = await response.json();
+                alert(result.message);
+                form.reset();
+                form.classList.remove('_sending');
+            }else{
+                alert('Ошибка');
+                form.classList.remove('_sending');                
+            }
+
+        }else{
+            alert('Заполните обязательное поле');
+        }
     }
-})
+
+    function formValidate(form){
+        let error = 0;
+        let formReq= document.querySelectorAll('._req');
+
+        for(let index=0; index<formReq.length; index++){
+            const input = formReq[index];
+            formRemoveError(input);           
+            if(input.getAttribute('type') === 'checkbox' && input.checked === false){
+                    formAddError(input);
+                    error++;
+                } else {
+                    if (input.value === ""){
+                    formAddError(input);
+                    error++;
+                }
+            }
+        }
+        return error;
+    }
+
+    function formAddError(input){
+        input.parentElement.classList.add('_error');
+        input.classList.add('_error');
+    }
+
+    function formRemoveError(input){
+        input.parentElement.classList.remove('_error');
+        input.classList.remove('_error');
+    }   
+});
 
     
