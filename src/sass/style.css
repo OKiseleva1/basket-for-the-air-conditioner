@@ -445,7 +445,6 @@ header {
 .home__content {
   padding-right: 42px;
   padding-bottom: 40px;
-  padding-top: 42px;
 }
 @media (max-width: 1200px) {
   .home__content {

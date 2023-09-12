@@ -84,9 +84,9 @@ const ITEM_RIGHT = document.querySelector("#item-right");
                         <h3 class="popup-subtitle">${bascets[path].type} - ${bascets[path].breed}</h3>
                         <p class="popup-text">${bascets[path].description}</p>
                         <ul class="popup-list">
-                            <li class="popup-item"><span>Age: </span>${bascets[path].age}</li>
-                            <li class="popup-item"><span>Inoculations: </span>${bascets[path].inoculations}</li>
-                            <li class="popup-item"><span>Diseases: </span>${bascets[path].diseases}</li>
+                            <li class="popup-item"><span>Вес: </span>${bascets[path].weight}</li>
+                            <li class="popup-item"><span>Габаритные размеры: </span>${bascets[path].size}</li>
+                            <li class="popup-item"><span>Антикорозионная защита: </span>${bascets[path].antiсorrosion}</li>
                             <li class="popup-item"><span>Parasites: </span>${bascets[path].parasites}</li>
                         </ul>
                     </div>`;

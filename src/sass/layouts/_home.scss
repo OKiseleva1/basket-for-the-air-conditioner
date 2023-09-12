@@ -29,8 +29,7 @@
 .home__content {
   padding-right: 42px;
   padding-bottom: 40px;
-  padding-top: 42px;
-
+  
   @include media-laptop {
       padding-top: 0;
       padding-left: 124px;
