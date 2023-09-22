@@ -139,7 +139,7 @@
                     <div class="footer-navigation__column">
                         <h2 class="footer-navigation__title">Контакты <br>для связи</h2>
                         <div class="footer__list">
-                            <a href="mailto:email@shelter.com" class="link_letter footer-navigation__links">
+                            <a href="mailto:info@korzina-konditsioner.ru" class="link_letter footer-navigation__links">
                                 <img src="./src/assets/icons/icon-email.svg" class="ico_footer" alt="letter">info@korzina-konditsioner.ru
                             </a>
                         </div>
@@ -192,24 +192,24 @@
         </div>        
     </div>
     <div id="client-form" class="popup">
-        <form id="body-form" class="popup-body form__body">
+        <form id="body-form" action="#" class="popup-body form__body">
             <div id="content-form" class="form-content">                
-                <h2 class="form__title">Заявка</h2>
+                <h2 class="form__title">Отправьте нам сообщение</h2>
                 <div class="form__item">
-                    <label for="formName">Имя*</label>
-                    <input id="formName" class="form__input _req" name="name" type="text">
+                    <label for="formName">Только русские буквы</label>
+                    <input id="formName" class="form__input _req" name="name" placeholder="Ваше имя*" type="text">
                 </div>
                 <div class="form__item">
-                    <label for="formEmail">E-mail*</label>
-                    <input id="formEmail" class="form__input _req _email" name="email" type="email">
+                    <label for="formEmail">В формате: name@mail.com</label>
+                    <input id="formEmail" class="form__input _req _email" name="email" placeholder="Введите email*" type="email">
                 </div>
                 <div class="form__item">
-                    <label for="formPhone">Телефон*</label>
-                    <input id="formPhone" class="form__input _req _phone" name="phone" type="tel">
+                    <label for="formPhone">В формате: 88000000000 или 78000000000</label>
+                    <input id="formPhone" class="form__input _req _phone" name="phone" placeholder="Введите телефон*" type="tel">
                 </div>
                 <div class="form__item">
                     <label for="formMessage">Сообщение</label>
-                    <textarea id="formMessage" class="form__input" name="message"></textarea>
+                    <textarea id="formMessage" class="form__input" name="message" ></textarea>
                 </div>
                 <div class="form__item">
                     <div class="form__label">Выберите RAL</div>
@@ -229,11 +229,11 @@
                 </div>
                 <div class="form__item">
                     <div class="checkbox">
-                        <input id="formAgreement" type="checkbox" name="agreement" class="checkbox__input _req">
+                        <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input _req">
                         <label class="checkbox__label" for="formAgreement">Нажимая кнопку я даю свое согласие на обработку персональных данных и соглашаюсь с условиями политики конфиденциальности</label>
                     </div>                    
                 </div>
-                <button class="button" type="submit">Отправить</button>
+                <button class="button" id="button-send" type="submit">Отправить</button>
             </div>            
         </form>
     <script src="./src/index.js"></script>
