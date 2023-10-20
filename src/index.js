@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function(){
             if (response.ok){
                 let result = await response.json();
                 alert(result.message);
-                formPreview.innerHTML = '';
+                // formPreview.innerHTML = '';
                 form.reset();
                 form.classList.remove('_sending');
             }else{
