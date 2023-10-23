@@ -37,7 +37,7 @@
 //     // Настройки вашей почты
 //     $mail->Host       = 'smtp.spaceweb.ru'; // SMTP сервера вашей почты
 //     $mail->Username   = 'info@korzina-konditsioner.ru'; // Логин на почте
-//     $mail->Password   = 'Ljhjuf-nva1'; // Пароль на почте
+//     $mail->Password   = '*********'; // Пароль на почте
 //     $mail->SMTPSecure = 'ssl';
 //     $mail->Port       = 465;
 //     $mail->setFrom('info@korzina-konditsioner.ru', 'Name'); // Адрес самой почты и имя отправителя
